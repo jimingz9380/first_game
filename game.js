@@ -50,7 +50,7 @@ function draw(){
 
     //the ball
     fill(50, 50, 50);
-    ellipse(ballX, ballY, 50, 50);
+    ellipse(ballX, ballY, 30, 30);
 
     //player1red shield
     fill(255, 0, 0);
@@ -83,13 +83,14 @@ function draw(){
     if (ballY > 880){
         yDirection *= -1;
         p1Score ++;
-        ballY = 450
-        
+        ballY = 450;
+        ballX = 375;
     }
     else if(ballY < 20){
         yDirection *= -1;
         p2Score ++;
         ballY = 450;
+        ballX = 375;
     }
 
     //p1red movement
@@ -132,19 +133,18 @@ function draw(){
 
 
     //winner text
-    if(p1Score > 1){
+    if(p1Score > 10){
         background(255, 0, 0);
         fill(0);
         textSize(100)
         text("Red Win!!!",375, 450);
-    }
-
-    if(p2Score > 1){
+    } else if(p2Score > 10){
         background(0, 0, 255);
         fill(0);
         textSize(100)
         text("Blue Win!!!",375, 450);
     }
 }
+
 
 
